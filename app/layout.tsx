@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
 import "./globals.css";
-
+import type { Metadata } from "next";
+import { Providergoogle } from "./Providergoogle";
+import Navbar from "./Navbar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -9,13 +10,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body>
-        {children}
+        <Providergoogle>
+           <Navbar/>
+           {children}
+           </Providergoogle>
       </body>
     </html>
   );
